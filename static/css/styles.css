@@ -1,0 +1,114 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 20px;
+    padding: 20px;
+    background: #D8C3A5;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.canvas-container {
+    background: #EAE7DC;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    width: 850px;
+    max-width: 90%;
+    position: relative;
+    user-select: none;
+}
+
+.canvas-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+canvas {
+    border: 2px solid #6aaf6c;
+    border-radius: 8px;
+    background: #f9f9f9;
+    cursor: grab;
+    transition: background 0.3s;
+}
+
+canvas:active {
+    cursor: grabbing;
+    background: #f1f1f1;
+}
+
+button {
+    padding: 8px 16px;
+    margin: 0 5px;
+    background: #3b9a3f;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #45a049;
+}
+
+.controls {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-group {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.input-group label {
+    margin-right: 10px;
+    font-weight: bold;
+    color: #555;
+}
+
+.input-group input[type="number"] {
+    width: 60px;
+    padding: 5px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.input-group input[type="range"] {
+    width: 200px;
+    margin: 0 10px;
+}
+
+.algorithm-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.algorithm-buttons button {
+    padding: 10px 20px;
+    margin: 5px;
+    background: #3b9a3f;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    font-size: 14px;
+}
+
+.algorithm-buttons button:hover {
+    background: #45a049;
+    transform: scale(1.05);
+}
+
+.algorithm-buttons button:active {
+    transform: scale(0.95);
+}

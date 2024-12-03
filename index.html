@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Отсечение отрезков и многоугольников</title>
+    <link rel="stylesheet" href="static/css/styles.css">
+</head>
+<body>
+    <div class="canvas-container">
+        <h2>Отсечение отрезков и многоугольников</h2>
+        <canvas id="canvas" width="800" height="600"></canvas>
+        <div class="controls">
+            <div class="input-group">
+                <label>Масштаб:</label>
+                <input type="range" id="scale" min="5" max="50" step="0.1" value="20" oninput="updateScale()">
+                <span id="scaleValue">Масштаб: 20.0</span>
+            </div>
+                <h4>Отрезки</h4>
+
+            <div class="input-group">
+                <div id="segments"></div>
+                <button onclick="addSegment()">Добавить отрезок</button>
+                <button onclick="generateRandomSegments()">Случайные координаты</button>
+            </div>
+                <h4>Отсекающее окно</h4>
+
+            <div class="input-group">
+                <label>Xmin:</label>
+                <input type="number" id="clipXmin" value="-5">
+                <label>Ymin:</label>
+                <input type="number" id="clipYmin" value="-5">
+                <label>Xmax:</label>
+                <input type="number" id="clipXmax" value="5">
+                <label>Ymax:</label>
+                <input type="number" id="clipYmax" value="5">
+            </div>
+
+            <div class="algorithm-buttons">
+                <button onclick="clipSegments()">Выполнить отсечение</button>
+                <button onclick="resetCanvas()">Сбросить</button>
+                 <button onclick="generateRandomWindow()">Случайные координаты</button>
+            </div>
+        </div>
+    </div>
+    <script src="static/js/script.js"></script>
+</body>
+</html>
