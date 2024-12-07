@@ -112,3 +112,21 @@ button:hover {
 .algorithm-buttons button:active {
     transform: scale(0.95);
 }
+
+.error-message {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    border-radius: 4px;
+    width: 100%;
+    text-align: center;
+    transition: opacity 0.5s ease;
+    opacity: 1;
+}
+
+.hidden {
+    display: none;
+}
+
