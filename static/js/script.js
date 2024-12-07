@@ -539,25 +539,25 @@ function clip() {
             showError('Многоугольник должен иметь как минимум 3 вершины.');
             return;
         }
-
+        // Рисуем исходный многоугольник
+            ctx.strokeStyle = 'gray';
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            const firstPoint = mapToCanvas(inputVertices[0].x, inputVertices[0].y);
+            ctx.moveTo(firstPoint.x, firstPoint.y);
+            for (let i = 1; i < inputVertices.length; i++) {
+                const point = mapToCanvas(inputVertices[i].x, inputVertices[i].y);
+                ctx.lineTo(point.x, point.y);
+            }
+            ctx.closePath();
+            ctx.stroke();
         // Проверка на выпуклость
         if (!isConvex(inputVertices)) {
             showError('Многоугольник невыпуклый. Пожалуйста, введите выпуклый многоугольник.');
             return;
         }
 
-        // Рисуем исходный многоугольник
-        ctx.strokeStyle = 'gray';
-        ctx.lineWidth = 1;
-        ctx.beginPath();
-        const firstPoint = mapToCanvas(inputVertices[0].x, inputVertices[0].y);
-        ctx.moveTo(firstPoint.x, firstPoint.y);
-        for (let i = 1; i < inputVertices.length; i++) {
-            const point = mapToCanvas(inputVertices[i].x, inputVertices[i].y);
-            ctx.lineTo(point.x, point.y);
-        }
-        ctx.closePath();
-        ctx.stroke();
+       
 
         // Отсечение многоугольника
         const clippedPolygon = sutherlandHodgman(inputVertices, clipWindow);
