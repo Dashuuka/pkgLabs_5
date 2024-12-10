@@ -539,14 +539,7 @@ function clip() {
             showError('Многоугольник должен иметь как минимум 3 вершины.');
             return;
         }
-
-        // Проверка на выпуклость
-        if (!isConvex(inputVertices)) {
-            showError('Многоугольник невыпуклый. Пожалуйста, введите выпуклый многоугольник.');
-            return;
-        }
-
-        // Рисуем исходный многоугольник
+// Рисуем исходный многоугольник
         ctx.strokeStyle = 'gray';
         ctx.lineWidth = 1;
         ctx.beginPath();
@@ -558,6 +551,13 @@ function clip() {
         }
         ctx.closePath();
         ctx.stroke();
+        // Проверка на выпуклость
+        if (!isConvex(inputVertices)) {
+            showError('Многоугольник невыпуклый. Пожалуйста, введите выпуклый многоугольник.');
+            return;
+        }
+
+
 
         // Отсечение многоугольника
         const clippedPolygon = sutherlandHodgman(inputVertices, clipWindow);
